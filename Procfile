@@ -1,0 +1,1 @@
+web: gunicorn securewaypoint.wsgi:application --log-file -
