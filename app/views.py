@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import UserEmail
+from django.contrib import messages
 
 ### USER AUTHENTICATION ###
 def register(response):
@@ -8,6 +9,7 @@ def register(response):
         form = UserEmail(response.POST)
         if form.is_valid():
             form.save()
+            messages.success(response, "Registration Successful!")
         return redirect('/login')
     else:
         form = UserEmail()
