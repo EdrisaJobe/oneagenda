@@ -48,12 +48,21 @@
         <!-- Endof Vertical Navbar -->
 
         <!-- Sign in and sign out -->
+        {% if user.is_authenticated %}
         <li>
-          <a href="#" class="signin">
+          <a href="/login" class="signin">
+            <i class="fas fa-user"></i>
+            <span class="nav-item">{{ user }}</span>
+          </a>
+        </li> 
+        {% else %} <!-- user not sign-in -->
+        <li>
+          <a href="/login" class="signin">
             <i class="fas fa-user"></i>
             <span class="nav-item">Sign In</span>
           </a>
-        </li>
+        </li> 
+        {% endif %}
          <!-- Endof Sign in and sign out -->
 
       </ul>

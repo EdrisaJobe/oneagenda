@@ -1,6 +1,20 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .forms import UserEmail
 
-# Create your views here.
+### USER AUTHENTICATION ###
+def register(response):
+
+    if response.method == "POST":
+        form = UserEmail(response.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('/login')
+    else:
+        form = UserEmail()
+    return render(response, 'registration/register.html', {'form':form})
+### ENDOF USER AUTHENTICATION ###
+
+### PAGES ###
 def home(request):
     
     return render(request, 'app/pages/home.html')
@@ -8,3 +22,4 @@ def home(request):
 def book(request):
 
     return render(request, 'app/pages/book.html')
+### ENDOF PAGES ###
