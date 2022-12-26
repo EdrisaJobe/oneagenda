@@ -1,19 +1,21 @@
 from django.shortcuts import render, redirect
-from .forms import UserEmail
 from django.contrib import messages
+from .forms import UserEmail
 
 ### USER AUTHENTICATION ###
-def register(response):
+def register(request):
 
-    if response.method == "POST":
-        form = UserEmail(response.POST)
+    if request.method == "POST":
+        form = UserEmail(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(response, "Registration Successful!")
-        return redirect('/login')
+
+            messages.success(request, "Successfully Registered!")
+            return redirect('/login')
     else:
         form = UserEmail()
-    return render(response, 'registration/register.html', {'form':form})
+    
+    return render(request, 'registration/register.html', {'form':form})
 ### ENDOF USER AUTHENTICATION ###
 
 ### PAGES ###

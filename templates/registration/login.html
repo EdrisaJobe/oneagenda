@@ -4,15 +4,19 @@
 {% block css %}<link rel="stylesheet" href="{% static 'css/login.css' %}"> {% endblock css %}
 {% load crispy_forms_tags %}
 
-<!-- Login form -->
+
 {% block content %}
+<!-- Login form -->
 <div class="container">
-    <form method="POST" class="form-group">
+    <form method="POST">
+
+        <!-- Success message -->
         {% if messages %}
             {% for message in messages %}
-            <h3 id="success">{{ message }}</h3>
+                <h3 id="success">{{ message }}</h3>
             {% endfor %}
         {% endif %}
+        <!-- EndOf Success message -->
 
         {% csrf_token %}
         {{ form|crispy }}
@@ -20,4 +24,5 @@
         <p>Don't have an account? <a href="{% url 'register' %}">Create an account.</a></p>
     </form>
 </div>
+<!-- EndOf Login form -->
 {% endblock content %}
