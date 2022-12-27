@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import UserEmail
+import requests
 
 ### USER AUTHENTICATION ###
 def register(request):
@@ -23,7 +24,9 @@ def home(request):
     
     return render(request, 'app/pages/home.html')
 
-def book(request):
+def book_flight(request):
 
-    return render(request, 'app/pages/book.html')
+    res = requests.get("http://test.api.amadeus.com/v2").json()
+
+    return render(request, 'app/pages/book_flight.html', {'res':res})
 ### ENDOF PAGES ###
