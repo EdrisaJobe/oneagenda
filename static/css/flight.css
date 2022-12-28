@@ -1,11 +1,14 @@
 .container {
-  display: grid;
-  place-items: center;
-  margin-top: 10%; 
+  margin: 5% 0 0 20%;
 }
 
 h2{
     color: #fff;
+}
+
+form{
+  display: inline;
+  place-items: center;
 }
 
 hr {
@@ -15,8 +18,8 @@ hr {
   width: 96%;
   background-color: #000000;
   height: 1px;
-  margin-top: 1rem;
-  max-width: 80%;
+  margin-top: 2rem;
+  max-width: 88%;
 }
 /* INPUT FIELD */
 input {
@@ -40,6 +43,10 @@ input:focus {
   background: #fff;
   outline: 0;
   box-shadow: 0 0 0 0 #fff inset, #007e9e 0 0 0 3px;
+}
+
+input:nth-child(3), input:nth-child(4){
+    width: 11%;
 }
 /* ENDOF INPUT FIELD */
 

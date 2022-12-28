@@ -14,17 +14,26 @@ class UserEmail(UserCreationForm):
     class Meta:
         model = User
         fields = ["username", "email", "password1", "password2"]
-        
+
+class DateInput(forms.DateInput):
+    
+    input_type = 'date'
+
 class FlightForm(ModelForm):
     
     flight_number = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Flight number...'}), label='')
-    origin = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'From'}), label='')
-    destination = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'To'}), label='')
-    status = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Status'}), label='')
+    flight_origin = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'From (NYC)'}), label='')
+    flight_destination = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'To (ALB)'}), label='')
+    flight_arrival = forms.DateField(widget=forms.TextInput(attrs={'placeholder':'Arrival MM-DD-YYYY'}), label='')
+    flight_return = forms.DateField(widget=forms.TextInput(attrs={'placeholder':'Return MM-DD-YYYY'}), label='')
     
     class Meta:
         model = Flight
         fields = '__all__'
+        widgets={
+            'flight_arrival': DateInput(),
+            'flight_return': DateInput()
+        }
     
 
 class FlightChecker(forms.Form):
