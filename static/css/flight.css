@@ -4,6 +4,16 @@
 
 h2{
     color: #fff;
+    margin-top: 2rem;
+}
+
+ul {
+  list-style-type: none;
+}
+
+table{
+  margin-top: 1rem;
+  min-width: 80%;
 }
 
 form{

@@ -10,8 +10,31 @@
     <form method="POST">
         {% csrf_token %}
         {{ form }}
-        <input class="btn" type="submit" value="Submit">
+        <input class="btn" type="submit" value="Save">
     </form>
     <hr>
+
+    <h2>Currently Saved Flights</h2>
+
+    {% for flight in flight_list %}
+    <table>
+        <tr>
+            <th>Flight #</th>
+            <th>Origin</th>
+            <th>Destination</th>
+            <th>Date Arrival</th>
+            <th>Date Return</th>
+            <th>Time</th>
+        </tr>
+        <tr>
+            <td>{{ flight.flight_number }}</td>
+            <td>{{ flight.flight_origin }}</td>
+            <td>{{ flight.flight_destination }}</td>
+            <td>{{ flight.flight_arrival }}</td>
+            <td>{{ flight.flight_return }}</td>
+            <td></td>
+        </tr>
+    </table>
+    {% endfor %}
 </div>
 {% endblock content %}
