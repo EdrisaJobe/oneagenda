@@ -1,6 +1,6 @@
 {% extends 'app/base.html' %}
 {% load static %}
-{% block title %}Home{% endblock title %}
+{% block title %}One Agenda{% endblock title %}
 {% block css %}<link rel="stylesheet" href="{% static 'css/home.css' %}">{% endblock css %}
 
 {% block content %}
@@ -12,9 +12,9 @@
   <section id="hero">
     <div class="container">
       <div class="info">
-        <h1>Book with us today!</h1>
-        <h2>We offer the best and most efficient way to have an safe and relaxing trip.</h2>
-        <a class="btn" href="{% url 'book_flight' %}">Book Now</a>
+        <h1>Organize travel plans</h1>
+        <h2>We offer the best and most efficient way to organize all your trips.</h2>
+        <a class="btn" href="{% url 'flight_agenda' %}">Manage</a>
       </div>
     </div>
   </section>

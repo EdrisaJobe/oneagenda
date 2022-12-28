@@ -26,5 +26,5 @@ urlpatterns = [
 
     # Pages
     path('', views.home, name='home'),
-    path('book-flight/', views.book_flight, name='book_flight')
+    path('flight-agenda/', views.flight_agenda, name='flight_agenda')
 ]

@@ -1,28 +1,25 @@
 .container {
-  display: flex;
-  margin-top: 5rem;
-  justify-content: center;
+  display: grid;
+  place-items: center;
+  margin-top: 10%; 
 }
 
-ul {
-  list-style-type: none;
+h2{
+    color: #fff;
 }
 
-#error_1_id_username, #error_1_id_password2{
-  color: rgb(255, 119, 119);
-}
-
-#div_id_password1, #div_id_email{
-  margin-top: 2rem;
-}
-
-p {
+hr {
+  border: 0;
+  clear: both;
+  display: block;
+  width: 96%;
+  background-color: #000000;
+  height: 1px;
   margin-top: 1rem;
+  max-width: 80%;
 }
-
 /* INPUT FIELD */
 input {
-  width: 100%;
   box-shadow: inset #abacaf 0 0 0 2px;
   border: 0;
   appearance: none;
@@ -34,6 +31,7 @@ input {
   font-weight: 400;
   height: 40px;
   transition: all 0.2s ease;
+  margin-top: 1rem;
 }
 input:hover {
   box-shadow: 0 0 0 0 #fff inset, #007e9e 0 0 0 2px;
@@ -46,27 +44,21 @@ input:focus {
 /* ENDOF INPUT FIELD */
 
 /* BUTTON */
-.btn-register {
+.btn {
   border: 0;
-  width: 100%;
-  margin-top: 1.5rem;
-  font-size: 30px;
+  margin-left: 1rem;
+  font-size: 14px;
   box-sizing: border-box;
   border-radius: 5px;
   background: rgb(15, 155, 248);
-  box-shadow: 0px 0px 3px 5px rgb(15, 155, 248);
+  box-shadow: 0px 0px 2px 0px rgb(15, 155, 248);
   text-decoration: none;
   color: #fff;
 }
 
-.btn-register:hover {
+.btn:hover {
   cursor: pointer;
   background: rgb(114, 186, 253);
-  box-shadow: 0px 0px 3px 5px rgb(114, 186, 253);
+  box-shadow: 0px 0px 2px 0px rgb(114, 186, 253);
 }
 /* ENDOF BUTTON */
-
-
-/* MOBILE & MAC VIEW */
-
-/* ENDOF MOBILE & MAC VIEW */

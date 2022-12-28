@@ -1,0 +1,17 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Flight Agenda{% endblock title %}
+{% block css %} <link rel="stylesheet" href="{% static 'css/flight.css' %}"> {% endblock css %}
+
+{% block content %}
+
+<div class="container">
+    <h2>Enter flight Information</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <input class="btn" type="submit" value="Submit">
+    </form>
+    <hr>
+</div>
+{% endblock content %}
