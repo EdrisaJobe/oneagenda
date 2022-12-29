@@ -1,5 +1,5 @@
 .container {
-  margin: 5% 0 0 20%;
+  margin: 5% 0 0 15%;
 }
 
 h2{
@@ -30,7 +30,7 @@ hr {
   border: 0;
   clear: both;
   display: block;
-  width: 80%;
+  width: 98%;
   background-color: #000000;
   height: 1px;
   margin-top: 2rem;
@@ -74,9 +74,18 @@ input:focus {
   box-shadow: 0 0 0 0 #fff inset, #007e9e 0 0 0 3px;
 }
 
-input:nth-child(3), input:nth-child(4){
-    width: 11%;
+input:nth-child(2){
+  width: 13%;
 }
+
+input:nth-child(3), input:nth-child(4), input:nth-child(5), input:nth-child(6){
+    width: 10%;
+}
+
+input:nth-child(7), input:nth-child(8){
+  width: 18%;
+}
+
 /* ENDOF INPUT FIELD */
 
 /* BUTTON */
@@ -101,6 +110,7 @@ input:nth-child(3), input:nth-child(4){
 
 /* TABLE */
 table {
+  width: 98%;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -140,7 +150,11 @@ table td {
   vertical-align: top;
 }
 
+table tbody tr:nth-of-type(even) {
+  background-color: rgb(255, 255, 255);
+}
+
 table tbody tr:nth-of-type(odd) {
-  background-color: rgba(0, 0, 0, .05);
+  background-color: rgb(215, 215, 215);
 }
 /* ENDOF TABLE */

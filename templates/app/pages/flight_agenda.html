@@ -20,9 +20,11 @@
     <table>
         <tr>
             <th>Flight #</th>
+            <th>Gate</th>
             <th>Origin</th>
             <th></th>
             <th>Destination</th>
+            <th>Seat</th>
             <th>Date Arrival</th>
             <th></th>
             <th>Date Return</th>
@@ -33,9 +35,11 @@
         {% for flight in flight_list %}
         <tr>  
             <td>{{ flight.flight_number }}</td>
+            <td>{{ flight.flight_gate }}</td>
             <td>{{ flight.flight_origin }}</td>
             <td>></td>
             <td>{{ flight.flight_destination }}</td>
+            <td>{{ flight.flight_seat }}</td>
             <td>{{ flight.flight_arrival }}</td>
             <td>></td>
             <td>{{ flight.flight_return }}</td>

@@ -24,12 +24,14 @@ class FlightForm(ModelForm):
     flight_number = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Flight number...'}), label='')
     flight_origin = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'From (NYC)'}), label='')
     flight_destination = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'To (ALB)'}), label='')
+    flight_gate = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Gate (12A)'}), label='')
+    flight_seat = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Seat (3B)'}), label='')
     flight_arrival = forms.DateField(widget=forms.TextInput(attrs={'placeholder':'Arrival MM-DD-YYYY'}), label='')
     flight_return = forms.DateField(widget=forms.TextInput(attrs={'placeholder':'Return MM-DD-YYYY'}), label='')
     
     class Meta:
         model = Flight
-        fields = ('flight_number', 'flight_origin', 'flight_destination')
+        fields = ('flight_number', 'flight_gate', 'flight_origin', 'flight_destination', 'flight_seat')
         widgets={
             'flight_arrival': DateInput(),
             'flight_return': DateInput()
