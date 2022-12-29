@@ -29,7 +29,7 @@ class FlightForm(ModelForm):
     
     class Meta:
         model = Flight
-        fields = '__all__'
+        fields = ('flight_number', 'flight_origin', 'flight_destination')
         widgets={
             'flight_arrival': DateInput(),
             'flight_return': DateInput()

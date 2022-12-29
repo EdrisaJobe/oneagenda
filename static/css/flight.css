@@ -21,6 +21,11 @@ form{
   place-items: center;
 }
 
+i{
+  margin: 0;
+  padding: 0;
+}
+
 hr {
   border: 0;
   clear: both;
@@ -30,6 +35,21 @@ hr {
   height: 1px;
   margin-top: 2rem;
 }
+
+button{
+  border: 0;
+  cursor: pointer;
+  width: 80%;
+  color: #fff;
+  box-shadow: 0px 0px 1px 2px rgb(255, 66, 66);
+  background-color: rgb(255, 66, 66);
+}
+
+button:hover{
+  box-shadow: 0px 0px 2px 2px rgb(255, 111, 111);
+  background-color: rgb(255, 111, 111);
+}
+
 /* INPUT FIELD */
 input {
   box-shadow: inset #abacaf 0 0 0 2px;

@@ -26,6 +26,15 @@ def home(request):
 
     return render(request, 'app/pages/home.html')
 
+# handle the deletion
+def delete_flight(request):
+    
+    if request.method == "POST":
+        id = request.POST.get("id")
+        fl = Flight.objects.get(id=id)
+        fl.delete()
+        return redirect('flight_agenda')
+    
 @login_required
 def flight_agenda(request):
     
@@ -47,7 +56,7 @@ def flight_agenda(request):
             form.instance.user = request.user
             form.save()
             return redirect('flight_agenda')
-
+        
     else:
         form = FlightForm()
 
