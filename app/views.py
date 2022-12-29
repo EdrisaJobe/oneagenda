@@ -1,13 +1,11 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+
 from .forms import UserEmail, FlightForm
 from .models import Flight
-import requests
 
 ### USER AUTHENTICATION ###
-
-
 def register(request):
 
     if request.method == "POST":
@@ -15,6 +13,7 @@ def register(request):
         if form.is_valid():
             form.save()
 
+            # success message at login
             messages.success(request, "Successfully Registered!")
             return redirect('/login')
     else:
@@ -23,22 +22,21 @@ def register(request):
     return render(request, 'registration/register.html', {'form': form})
 ### ENDOF USER AUTHENTICATION ###
 
-
 def home(request):
 
     return render(request, 'app/pages/home.html')
 
-
+@login_required
 def flight_agenda(request):
     
     # grab all the saved items within database
-    flight_list = Flight.objects.all()
+    flight_list = Flight.objects.filter(user=request.user)
 
     if request.method == "POST":
         form = FlightForm(request.POST)
 
         if form.is_valid():
-
+            
             # get each individual item
             flight_number = form.cleaned_data['flight_number']
             flight_origin = form.cleaned_data['flight_origin']
@@ -46,11 +44,8 @@ def flight_agenda(request):
             flight_arrival = form.cleaned_data['flight_arrival']
             flight_return = form.cleaned_data['flight_return']
 
-            # setting the varibales within themselves and saving the form
-            Flight.objects.filter(flight_number=flight_number, flight_origin=flight_origin,
-                                  flight_destination=flight_destination, flight_arrival=flight_arrival, flight_return=flight_return)
+            form.instance.user = request.user
             form.save()
-
             return redirect('flight_agenda')
 
     else:

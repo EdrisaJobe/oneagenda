@@ -16,7 +16,7 @@
 
     <h2>Currently Saved Flights</h2>
 
-    {% for flight in flight_list %}
+    
     <table>
         <tr>
             <th>Flight #</th>
@@ -24,17 +24,21 @@
             <th>Destination</th>
             <th>Date Arrival</th>
             <th>Date Return</th>
-            <th>Time</th>
         </tr>
-        <tr>
+
+        <!-- Table data -->
+       
+        {% for flight in flight_list %}
+        <tr>  
             <td>{{ flight.flight_number }}</td>
             <td>{{ flight.flight_origin }}</td>
             <td>{{ flight.flight_destination }}</td>
             <td>{{ flight.flight_arrival }}</td>
             <td>{{ flight.flight_return }}</td>
-            <td></td>
         </tr>
+        {% endfor %}
+
     </table>
-    {% endfor %}
+    
 </div>
 {% endblock content %}

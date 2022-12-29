@@ -25,11 +25,10 @@ hr {
   border: 0;
   clear: both;
   display: block;
-  width: 96%;
+  width: 80%;
   background-color: #000000;
   height: 1px;
   margin-top: 2rem;
-  max-width: 88%;
 }
 /* INPUT FIELD */
 input {
@@ -79,3 +78,49 @@ input:nth-child(3), input:nth-child(4){
   box-shadow: 0px 0px 2px 0px rgb(114, 186, 253);
 }
 /* ENDOF BUTTON */
+
+/* TABLE */
+table {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  box-sizing: border-box;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+  background-color: transparent;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 0px;
+}
+
+table th {
+  font-size: 1rem;
+  line-height: 1.5;
+  border-collapse: collapse;
+  box-sizing: border-box;
+  text-align: inherit;
+  padding: .75rem;
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+  color: #fff;
+  background-color: #212529;
+  border-color: #32383e;
+}
+
+table td {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  border-collapse: collapse;
+  box-sizing: border-box;
+  padding: .75rem;
+  vertical-align: top;
+}
+
+table tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, .05);
+}
+/* ENDOF TABLE */
