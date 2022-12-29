@@ -47,7 +47,7 @@
                 <td class="blank2">></td>
                 <td data-label="Return">{{ flight.flight_return }}</td>
                 
-                <!-- Delete subission -->
+                <!-- Delete model -->
                 <td data-label="Delete"><form action="{% url 'delete_flight' %}" method="post">
                     {% csrf_token %} 
                     <input type="hidden" name="id" value="{{ flight.id }}">

@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-# Create your models here.
+### FLIGHT MODEL ###
 class Flight(models.Model):
     
     flight_number = models.CharField(max_length=6)
@@ -12,3 +12,5 @@ class Flight(models.Model):
     flight_arrival = models.DateField(auto_now=True)
     flight_return = models.DateField(auto_now=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    
+### HOTEL MODEL ###

@@ -6,7 +6,7 @@ from django.contrib.auth.forms import UserCreationForm
 # Custom model imports
 from .models import Flight
 
-
+# UserCreationForm is a builtin user register form
 class UserEmail(UserCreationForm):
     
     email = forms.EmailField(required=True)
@@ -19,6 +19,7 @@ class DateInput(forms.DateInput):
     
     input_type = 'date'
 
+### FLIGHT FORM ###
 class FlightForm(ModelForm):
     
     flight_number = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Flight number...'}), label='')
@@ -37,8 +38,4 @@ class FlightForm(ModelForm):
             'flight_return': DateInput()
         }
     
-
-class FlightChecker(forms.Form):
-    
-    flight_number = forms.CharField(max_length=6, label=False)
-    
+### HOTEL FORM ###

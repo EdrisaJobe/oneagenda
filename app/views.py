@@ -38,7 +38,7 @@ def delete_flight(request):
 @login_required
 def flight_agenda(request):
     
-    # grab all the saved items within database
+    # grab all the saved items within database upon user request
     flight_list = Flight.objects.filter(user=request.user)
 
     if request.method == "POST":
@@ -55,6 +55,7 @@ def flight_agenda(request):
             flight_arrival = form.cleaned_data['flight_arrival']
             flight_return = form.cleaned_data['flight_return']
 
+            # if user input, we save to individual db
             form.instance.user = request.user
             form.save()
             return redirect('flight_agenda')
@@ -64,7 +65,7 @@ def flight_agenda(request):
 
     return render(request, 'app/pages/flight_agenda.html', {'form': form, 'flight_list': flight_list})
 
+@login_required
+def hotel_agenda(request):
 
-def book_hotel(request):
-
-    return render(request, 'app/pages/book_hotel.html')
+    return render(request, 'app/pages/hotel_agenda.html')
