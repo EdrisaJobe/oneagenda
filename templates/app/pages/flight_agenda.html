@@ -17,41 +17,45 @@
     <h2>Currently Saved Flights</h2>
 
     
-    <table>
-        <tr>
-            <th>Flight #</th>
-            <th>Gate</th>
-            <th>Origin</th>
-            <th></th>
-            <th>Destination</th>
-            <th>Seat</th>
-            <th>Date Arrival</th>
-            <th></th>
-            <th>Date Return</th>
-            <th>Delete</th>
-        </tr>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Flight #</th>
+                <th>Gate</th>
+                <th>Origin</th>
+                <th></th> <!-- arrow column -->
+                <th>Destination</th>
+                <th>Seat</th>
+                <th>Date Arrival</th>
+                <th></th> <!-- arrow column -->
+                <th>Date Return</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
 
         <!-- Table data -->
         {% for flight in flight_list %}
-        <tr>  
-            <td>{{ flight.flight_number }}</td>
-            <td>{{ flight.flight_gate }}</td>
-            <td>{{ flight.flight_origin }}</td>
-            <td>></td>
-            <td>{{ flight.flight_destination }}</td>
-            <td>{{ flight.flight_seat }}</td>
-            <td>{{ flight.flight_arrival }}</td>
-            <td>></td>
-            <td>{{ flight.flight_return }}</td>
-
-            <!-- Delete subission -->
-            <td><form action="{% url 'delete_flight' %}" method="post">
-                {% csrf_token %} 
-                <input type="hidden" name="id" value="{{ flight.id }}">
-                <button type="submit" name="delete" value="delete">Delete</button>
-              </form>
-            </td>
-        </tr>
+        <tbody>
+            <tr>
+                <td data-label="Flight #">{{ flight.flight_number }}</td>
+                <td data-label="Gate #">{{ flight.flight_gate }}</td>
+                <td data-label="Origin">{{ flight.flight_origin }}</td>
+                <td class="blank1">></td>
+                <td data-label="Destination">{{ flight.flight_destination }}</td>
+                <td data-label="Seat #">{{ flight.flight_seat }}</td>
+                <td data-label="Arrival">{{ flight.flight_arrival }}</td>
+                <td class="blank2">></td>
+                <td data-label="Return">{{ flight.flight_return }}</td>
+                
+                <!-- Delete subission -->
+                <td data-label="Delete"><form action="{% url 'delete_flight' %}" method="post">
+                    {% csrf_token %} 
+                    <input type="hidden" name="id" value="{{ flight.id }}">
+                    <button type="submit" name="delete" value="delete">Delete</button>
+                </form>
+                </td>
+            </tr>
+        </tbody>
         {% endfor %}
 
     </table>

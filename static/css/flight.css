@@ -13,7 +13,8 @@ ul {
 
 table{
   margin-top: 1rem;
-  min-width: 80%;
+  max-width: 98%;
+  border-collapse: collapse;
 }
 
 form{
@@ -148,6 +149,11 @@ table td {
   box-sizing: border-box;
   padding: .75rem;
   vertical-align: top;
+} 
+
+.table{
+  width: 100%;
+  border-collapse: collapse;
 }
 
 table tbody tr:nth-of-type(even) {
@@ -155,6 +161,74 @@ table tbody tr:nth-of-type(even) {
 }
 
 table tbody tr:nth-of-type(odd) {
-  background-color: rgb(215, 215, 215);
+  background-color: rgb(255, 255, 255);
 }
 /* ENDOF TABLE */
+
+/* MOBILE VIEW */
+@media screen and (max-width: 800px){
+
+  /* INPUT */
+  .container{
+    margin-left: 20%;
+  }
+  input:nth-child(2){
+    display: flex;
+    width: 95%;
+  }
+  input:nth-child(3), input:nth-child(4), input:nth-child(5){
+    width: 31%;
+  }
+  input:nth-child(6), input:nth-child(7),input:nth-child(8){
+    display: inline;
+    width: 31%;
+  }
+  input:nth-child(9){
+    margin-left: 0;
+    min-width: 95%;
+    padding-left: 2rem;
+  }
+  h2, hr{
+    display: none;
+  }
+
+/* TABLE */
+  .table{
+    margin-top: 2rem;
+  }
+  .table thead{
+    display: none;
+  }
+  .blank1, .blank2{
+    display: none;
+  }
+  tbody td:nth-child(4), tbody td:nth-child(8){
+    display: none;
+  }
+  .table, .table tbody, .table tr, .table td{
+    display: block;
+    width: 100%;
+  }
+  .table tr{
+    margin-bottom: 15px;
+  }
+  .table td{
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+  .table td::before{
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: left;
+  }
+  button{
+    width: 55%;
+  }
+}
+/* ENDOF MOBILE VIEW */
