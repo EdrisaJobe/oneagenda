@@ -1,7 +1,5 @@
 # About One Agenda
-I've always wanted to track my gym sessions with ease but found every application too feature rich or just outright not working as intended. I wanted something ismple
-to fallback to so that I can track my progress and be able to quickly log in and out without the hassle of advertisements and outdated features. This app is perfect for 
-someone who's as simplistic as me, you can track your session get some motivation as well as find some helpful facts about going to the gym.
+Ever wanted to plan out a trip and store crucial information with ease without the need or hassle of paying a premium just to store your data in a simple table format? Well this app is designed to make that easy, I made this app as a way to store important information fast and without the need of having to use multiple apps to store individual data regarding Fligth and Hotel information. Simply make an account, sign in, and store simple useful information that you can then grab later on or simply discard if no longer needed.
 
 <a href="https://oneagenda.herokuapp.com/"><img src="https://img.shields.io/badge/Link-One_Agenda-2ea44f?style=for-the-badge" alt="Link - One Agenda"></a>
 # Technology Used :hammer_and_wrench:
