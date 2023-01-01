@@ -1,8 +1,57 @@
 {% extends 'app/base.html' %}
 {% load static %}
 {% block title %}Hotel Agenda{% endblock title %}
-{% block css %}{% endblock css %}
+{% block css %} <link rel="stylesheet" href="{% static 'css/hotel.css' %}"> {% endblock css %}
 
 {% block content %}
 
+<div class="container">
+    <h2>Enter hotel Information</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <input class="btn" type="submit" value="Save">
+    </form>
+    <hr>
+
+    <h2>Currently Saved Hotels</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Origin</th>
+                <th></th> <!-- arrow column -->
+                <th>Destination</th>
+                <th>Date Arrival</th>
+                <th></th> <!-- arrow column -->
+                <th>Date Return</th>
+                <th># Of Travelers</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+
+        <!-- Table data -->
+        {% for hotel in hotel_list %}
+        <tbody>
+            <tr>
+                <td data-label="Origin">{{ hotel.hotel_origin }}</td>
+                <td class="blank1">></td>
+                <td data-label="Destination">{{ hotel.hotel_destination }}</td>
+                <td data-label="Arrival">{{ hotel.hotel_arrival }}</td>
+                <td class="blank2">></td>
+                <td data-label="Return">{{ hotel.hotel_return }}</td>
+                <td data-label="# Travelers">{{ hotel.hotel_travelers }}</td>
+                
+                <!-- Delete model -->
+                <td data-label="Delete"><form action="{% url 'delete_hotel' %}" method="post">
+                    {% csrf_token %} 
+                    <input type="hidden" name="id" value="{{ hotel.id }}">
+                    <button type="submit" name="delete" value="delete">Delete</button>
+                </form>
+                </td>
+            </tr>
+        </tbody>
+        {% endfor %}
+
+    </table>
+</div>
 {% endblock content %}

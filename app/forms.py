@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 
 # Custom model imports
-from .models import Flight
+from .models import Flight, Hotel
 
 # UserCreationForm is a builtin user register form
 class UserEmail(UserCreationForm):
@@ -39,3 +39,18 @@ class FlightForm(ModelForm):
         }
     
 ### HOTEL FORM ###
+class HotelForm(ModelForm):
+
+    hotel_origin = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'From (NYC)'}), label='')
+    hotel_destination = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'To (DUB)'}), label='')
+    hotel_arrival = forms.DateField(widget=forms.TextInput(attrs={'placeholder':'Arrival MM-DD-YYYY'}), label='')
+    hotel_return = forms.DateField(widget=forms.TextInput(attrs={'placeholder':'Return MM-DD-YYYY'}), label='')
+    hotel_travelers = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'# People'}), label='')
+
+    class Meta:
+        model = Hotel
+        fields = ('hotel_origin', 'hotel_destination', 'hotel_arrival', 'hotel_return', 'hotel_travelers')
+        widgets = {
+            'hotel_arrival': DateInput(),
+            'hotel_return': DateInput()
+        }

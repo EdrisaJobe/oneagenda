@@ -2,8 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
-from .forms import UserEmail, FlightForm
-from .models import Flight
+from .forms import UserEmail, FlightForm, HotelForm
+from .models import Flight, Hotel
 
 ### USER AUTHENTICATION ###
 def register(request):
@@ -26,7 +26,7 @@ def home(request):
 
     return render(request, 'app/pages/home.html')
 
-# handle the deletion
+# handle the flight deletion
 def delete_flight(request):
     
     if request.method == "POST":
@@ -34,7 +34,17 @@ def delete_flight(request):
         fl = Flight.objects.get(id=id)
         fl.delete()
         return redirect('flight_agenda')
-    
+
+# hanfle the hotel deletion
+def delete_hotel(request):
+
+    if request.method == "POST":
+        id = request.POST.get("id")
+        ht = Hotel.objects.get(id=id)
+        ht.delete()
+        return redirect('hotel_agenda')
+
+
 @login_required
 def flight_agenda(request):
     
@@ -68,4 +78,24 @@ def flight_agenda(request):
 @login_required
 def hotel_agenda(request):
 
-    return render(request, 'app/pages/hotel_agenda.html')
+    # save data to individual
+    hotel_list = Hotel.objects.filter(user=request.user)
+
+    if request.method == "POST":
+        form = HotelForm(request.POST)
+
+        if form.is_valid():
+
+            hotel_origin = form.cleaned_data['hotel_origin']
+            hotel_destination = form.cleaned_data['hotel_destination']
+            hotel_arrival = form.cleaned_data['hotel_arrival']
+            hotel_return = form.cleaned_data['hotel_return']
+            hotel_travelers = form.cleaned_data['hotel_travelers']
+
+            form.instance.user = request.user
+            form.save()
+            return redirect('hotel_agenda')
+    else:
+        form = HotelForm()
+
+    return render(request, 'app/pages/hotel_agenda.html', {'form':form, 'hotel_list':hotel_list})

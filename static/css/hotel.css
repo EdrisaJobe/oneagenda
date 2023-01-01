@@ -7,14 +7,15 @@ h2 {
   margin-top: 2rem;
 }
 
-ul {
-  list-style-type: none;
-}
-
 table {
   margin-top: 1rem;
   max-width: 98%;
   border-collapse: collapse;
+}
+
+ul{
+    list-style-type: none;
+    display: inline-block;
 }
 
 form {
@@ -40,7 +41,7 @@ hr {
 button {
   border: 0;
   cursor: pointer;
-  width: 80%;
+  width: 40%;
   color: #fff;
   box-shadow: 0px 0px 1px 2px rgb(255, 66, 66);
   background-color: rgb(255, 66, 66);
@@ -75,21 +76,20 @@ input:focus {
   box-shadow: 0 0 0 0 #fff inset, #007e9e 0 0 0 3px;
 }
 
-input:nth-child(2) {
-  width: 13%;
+input:nth-child(2),
+input:nth-child(3) {
+  width: 8%;
 }
 
-input:nth-child(3),
 input:nth-child(4),
-input:nth-child(5),
-input:nth-child(6) {
-  width: 10%;
+input:nth-child(5) {
+  width: 11%;
 }
 
-input:nth-child(7),
-input:nth-child(8) {
-  width: 18%;
+input:nth-child(6){
+    width: 6%;
 }
+
 
 /* ENDOF INPUT FIELD */
 
@@ -184,13 +184,11 @@ table tbody tr:nth-of-type(odd) {
   input:nth-child(5) {
     width: 31%;
   }
-  input:nth-child(6),
-  input:nth-child(7),
-  input:nth-child(8) {
+  input:nth-child(6) {
     display: inline;
-    width: 31%;
+    width: 95%;
   }
-  input:nth-child(9) {
+  input:nth-child(7) {
     margin-left: 0;
     min-width: 95%;
     padding-left: 2rem;
@@ -211,8 +209,8 @@ table tbody tr:nth-of-type(odd) {
   .blank2 {
     display: none;
   }
-  tbody td:nth-child(4),
-  tbody td:nth-child(8) {
+  tbody td:nth-child(2),
+  tbody td:nth-child(5) {
     display: none;
   }
   .table,

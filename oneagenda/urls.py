@@ -24,8 +24,9 @@ urlpatterns = [
     path('', include('django.contrib.auth.urls')), # login page
     path('register/', views.register, name='register'),
 
-    # When user deletes a flight model
+    # When user deletes a flight or hotel model
     path('delete_flight/', views.delete_flight, name='delete_flight'),
+    path('dleete_hotel/', views.delete_hotel, name='delete_hotel'),
     
     # Pages
     path('', views.home, name='home'),
