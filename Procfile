@@ -1,1 +1,1 @@
-web: gunicorn securewaypoint.wsgi:application --log-file -
+web: gunicorn oneagenda.wsgi:application --log-file -
