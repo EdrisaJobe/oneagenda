@@ -1,0 +1,247 @@
+.container {
+  margin: 5% 0 0 15%;
+}
+
+h2 {
+  color: #fff;
+  margin-top: 2rem;
+}
+
+ul {
+  list-style-type: none;
+}
+
+table {
+  margin-top: 1rem;
+  max-width: 98%;
+  border-collapse: collapse;
+}
+
+form {
+  display: inline;
+  place-items: center;
+}
+
+i {
+  margin: 0;
+  padding: 0;
+}
+
+hr {
+  border: 0;
+  clear: both;
+  display: block;
+  width: 98%;
+  background-color: #000000;
+  height: 1px;
+  margin-top: 2rem;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+  width: 80%;
+  color: #fff;
+  box-shadow: 0px 0px 1px 2px rgb(255, 66, 66);
+  background-color: rgb(255, 66, 66);
+}
+
+button:hover {
+  box-shadow: 0px 0px 2px 2px rgb(255, 111, 111);
+  background-color: rgb(255, 111, 111);
+}
+
+/* INPUT FIELD */
+input {
+  box-shadow: inset #abacaf 0 0 0 2px;
+  border: 0;
+  appearance: none;
+  border-radius: 3px;
+  padding: 9px 12px;
+  line-height: 1.4;
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  font-weight: 400;
+  height: 40px;
+  transition: all 0.2s ease;
+  margin-top: 1rem;
+}
+input:hover {
+  box-shadow: 0 0 0 0 #fff inset, #007e9e 0 0 0 2px;
+}
+input:focus {
+  background: #fff;
+  outline: 0;
+  box-shadow: 0 0 0 0 #fff inset, #007e9e 0 0 0 3px;
+}
+
+input:nth-child(2) {
+  width: 13%;
+}
+
+input:nth-child(3),
+input:nth-child(4),
+input:nth-child(5),
+input:nth-child(6) {
+  width: 10%;
+}
+
+input:nth-child(7),
+input:nth-child(8) {
+  width: 18%;
+}
+
+/* ENDOF INPUT FIELD */
+
+/* BUTTON */
+.btn {
+  border: 0;
+  margin-left: 1rem;
+  font-size: 14px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background: rgb(15, 155, 248);
+  box-shadow: 0px 0px 2px 0px rgb(15, 155, 248);
+  text-decoration: none;
+  color: #fff;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background: rgb(114, 186, 253);
+  box-shadow: 0px 0px 2px 0px rgb(114, 186, 253);
+}
+/* ENDOF BUTTON */
+
+/* TABLE */
+table {
+  width: 98%;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  box-sizing: border-box;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+  background-color: transparent;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 0px;
+}
+
+table th {
+  font-size: 1rem;
+  line-height: 1.5;
+  border-collapse: collapse;
+  box-sizing: border-box;
+  text-align: inherit;
+  padding: 0.75rem;
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+  color: #fff;
+  background-color: #212529;
+  border-color: #32383e;
+}
+
+table td {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  border-collapse: collapse;
+  box-sizing: border-box;
+  padding: 0.75rem;
+  vertical-align: top;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table tbody tr:nth-of-type(even) {
+  background-color: rgb(235, 106, 106);
+}
+
+table tbody tr:nth-of-type(odd) {
+  background-color: rgb(255, 255, 255);
+}
+/* ENDOF TABLE */
+
+/* MOBILE VIEW */
+@media screen and (max-width: 800px) {
+  /* INPUT */
+  .container {
+    margin-left: 20%;
+  }
+  input:nth-child(2) {
+    display: flex;
+    width: 95%;
+  }
+  input:nth-child(3),
+  input:nth-child(4),
+  input:nth-child(5) {
+    width: 31%;
+  }
+  input:nth-child(6),
+  input:nth-child(7),
+  input:nth-child(8) {
+    display: inline;
+    width: 31%;
+  }
+  input:nth-child(9) {
+    margin-left: 0;
+    min-width: 95%;
+    padding-left: 2rem;
+  }
+  h2,
+  hr {
+    display: none;
+  }
+
+  /* TABLE */
+  .table {
+    margin-top: 1rem;
+  }
+  .table thead {
+    display: none;
+  }
+  .blank1,
+  .blank2 {
+    display: none;
+  }
+  tbody td:nth-child(4),
+  tbody td:nth-child(8) {
+    display: none;
+  }
+  .table,
+  .table tbody,
+  .table tr,
+  .table td {
+    display: block;
+    width: 100%;
+  }
+  .table tr {
+    margin-bottom: 15px;
+  }
+  .table td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+  .table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: left;
+  }
+  button {
+    width: 55%;
+  }
+}
+/* ENDOF MOBILE VIEW */
