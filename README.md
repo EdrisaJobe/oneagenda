@@ -2,7 +2,7 @@
 Ever wanted to plan out a trip and store crucial information with ease without the need or hassle of paying a premium just to store your data in a simple table format? Well this app is designed to make that easy, I made this app as a way to store important information fast and without the need of having to use multiple apps to store individual data regarding Fligth and Hotel information. Simply make an account, sign in, and store simple useful information that you can then grab later on or simply discard if no longer needed.
 
 <a href="https://oneagenda.herokuapp.com/"><img src="https://img.shields.io/badge/Link-One_Agenda-2ea44f?style=for-the-badge" alt="Link - One Agenda"></a>
-# Technology Used :hammer_and_wrench:
+## Technology Used :hammer_and_wrench:
 
 Frontend :gear:| Description|
 -------|------------|
@@ -29,3 +29,13 @@ Web-services :spider_web:| Description|
 -------|------------|
 Heroku | Heroku is a cloud platform for hosting and maintaining website information which I used to later connect the platform with GoDaddy. 
 GoDaddy| Domain was registered from GoDaddy alongside all DNS setup.
+
+# Visual Example
+<img width="1674" alt="Screen Shot 2023-01-11 at 2 45 51 PM" src="https://user-images.githubusercontent.com/48189579/211903447-a2c9431e-716b-40e3-8a97-1d1da75184f7.png">
+
+<img width="1674" alt="Screen Shot 2023-01-11 at 2 46 05 PM" src="https://user-images.githubusercontent.com/48189579/211903470-29d40c9a-2be2-4c43-91e9-1ed1675cd48e.png">
+
+<img width="1674" alt="Screen Shot 2023-01-11 at 2 47 18 PM" src="https://user-images.githubusercontent.com/48189579/211903496-2bfc8735-4521-4525-8c32-10a9fc428516.png">
+
+<img width="1674" alt="Screen Shot 2023-01-11 at 2 47 33 PM" src="https://user-images.githubusercontent.com/48189579/211903519-757eda5f-a6d8-4fa8-b39a-ff7911251099.png">
+
